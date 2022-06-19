@@ -1,4 +1,4 @@
-package assignment1;
+package assignments.assignment1;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -14,6 +14,12 @@ import java.util.Scanner;
  *
  *  */
 public class Main {
+
+    private final long result;
+
+    public Main(int input){
+        result = calculateCorrectCases(input);
+    }
 
     public static void main(String[] args) {
 
@@ -44,19 +50,23 @@ public class Main {
     /**
      * Returns value of binomial coeff C(n, k)
      *
-     * @param n - input * 2
-     * @param k  input
+     * @param n input * 2
+     * @param k input
      *
      * @return binom coef
      * */
     private static long getBinomialCoefficient(long n, long k){
         long coefficient = 1;
 
-        for (int i = 0; i < k; ++i) { //calculating nCk
+        for (int i = 0; i < k; i++) { //calculating nCk
             coefficient *= (n - i);
             coefficient /= (i + 1);
         }
 
         return coefficient;
+    }
+
+    public long getResult(){
+        return result;
     }
 }
