@@ -12,7 +12,7 @@ public class Main {
      * @param number numb to find factorial
      * @return factorial value in String representation
      * */
-    public static String factorial(int number) {
+    private static String factorial(int number) {
         BigInteger result = BigInteger.valueOf(1);
         for (long factor = 2; factor <= number; factor++) { //factor 2 bc 1 * 1 = 1 anyway :)
             result = result.multiply(BigInteger.valueOf(factor));
@@ -27,7 +27,7 @@ public class Main {
      * @return sum of digits
      *
      * */
-    public static int findSum(String factorial){
+    private static int findSum(String factorial){
         char[] numb = factorial.toCharArray();
         int sum = 0;
         for (char c : numb) {
